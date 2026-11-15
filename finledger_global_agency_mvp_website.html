@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLedger Global | Tax, Compliance & Global Bookkeeping Agency</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Crisp Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                        },
+                        brand: {
+                            blue: '#2563EB',
+                            emerald: '#059669',
+                            light: '#F8FAFC',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom subtle glassmorphism and animations */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(5, 150, 105, 0.06), transparent 45%),
+                        #F8FAFC;
+        }
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- ==================== STICKY NAVIGATION BAR ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-navy-900 flex items-center justify-center text-white shadow-md group-hover:bg-blue-600 transition-colors">
+                        <i class="fa-solid fa-layer-group text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <span class="font-display font-extrabold text-xl tracking-tight text-navy-900">FinLedger</span>
+                            <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 rounded-full border border-emerald-200">Demo MVP</span>
+                        </div>
+                        <span class="text-[11px] font-medium text-slate-500 -mt-1">Global Tax & Bookkeeping</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Services</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">How It Works</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Pricing & Plans</a>
+                    <a href="#why-us" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Why Us</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="openModal('General Strategy Consultation')" class="px-5 py-2.5 rounded-xl bg-navy-900 hover:bg-blue-600 text-white text-sm font-semibold shadow-sm transition-all cursor-pointer flex items-center gap-2">
+                        <span>Book Free Consultation</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+            <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">How It Works</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Pricing & Plans</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Why Us</a>
+            <div class="pt-2">
+                <button onclick="toggleMobileMenu(); openModal('General Strategy Consultation');" class="w-full py-3 rounded-xl bg-navy-900 text-white font-semibold text-sm shadow-sm">
+                    Book Free Consultation
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 hero-gradient border-b border-slate-200/70 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        <span>Local Tax Compliance & Global Bookkeeping Under One Roof</span>
+                    </div>
+
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-[54px] text-navy-900 leading-[1.12] tracking-tight">
+                        Your All-in-One Tax, Compliance & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Global Bookkeeping</span> Partner.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        From seamless FBR income tax returns and corporate filings for Individuals & AOPs to dedicated monthly bookkeeping for international businesses. Focus on scaling while our experts handle your numbers.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#pricing" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-navy-900 hover:bg-blue-600 text-white font-semibold text-sm shadow-lg shadow-slate-900/10 transition-all text-center">
+                            Explore Packages
+                        </a>
+                        <button onclick="openModal('Free Strategy Call')" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-navy-900 font-semibold text-sm border border-slate-300 shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-regular fa-calendar-check text-blue-600"></i>
+                            <span>Schedule Strategy Call</span>
+                        </button>
+                    </div>
+
+                    <!-- Micro Trust Indicators -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs font-medium text-slate-500">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> 100% FBR Compliant</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> QuickBooks & Xero Certified</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Dedicated Account Managers</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Compliance & Bookkeeping UI Preview Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Glow -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-emerald-500/20 rounded-3xl blur-xl"></div>
+                        
+                        <!-- Main Dashboard Mockup Card -->
+                        <div class="relative bg-white rounded-2xl border border-slate-200/90 shadow-xl p-6 space-y-5">
+                            <!-- Card Header -->
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                                    <span class="ml-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Client Portal Snapshot</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold">Active Status</span>
+                            </div>
+
+                            <!-- Metric 1: Local Tax Status -->
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-file-shield"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-medium text-slate-500">FBR Tax & ATL Status</p>
+                                        <p class="text-sm font-bold text-navy-900">100% Filed & Verified</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-emerald-600 bg-emerald-100/70 px-2.5 py-1 rounded-lg">Up to Date</span>
+                            </div>
+
+                            <!-- Metric 2: Global Bookkeeping -->
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-chart-pie"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-medium text-slate-500">Monthly Books Reconciled</p>
+                                        <p class="text-sm font-bold text-navy-900">QuickBooks & Xero Sync</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-blue-700 bg-blue-100/70 px-2.5 py-1 rounded-lg">Closed</span>
+                            </div>
+
+                            <!-- Bottom Summary Bar -->
+                            <div class="pt-2 grid grid-cols-2 gap-3">
+                                <div class="p-3.5 rounded-xl bg-navy-900 text-white">
+                                    <p class="text-[11px] text-slate-300">Local Filings</p>
+                                    <p class="text-lg font-display font-bold mt-0.5">Individuals & AOPs</p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-blue-600 text-white">
+                                    <p class="text-[11px] text-blue-100">Global Retainers</p>
+                                    <p class="text-lg font-display font-bold mt-0.5">US / UK / UAE Books</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Bar / Ecosystem Strip -->
+            <div class="mt-16 pt-8 border-t border-slate-200/80">
+                <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
+                    Tools, Platforms & Regulatory Standards We Work With
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center text-slate-500">
+                    <div class="flex items-center gap-2.5 font-display font-bold text-base sm:text-lg">
+                        <i class="fa-solid fa-book-open text-emerald-600"></i>
+                        <span>QuickBooks Online</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 font-display font-bold text-base sm:text-lg">
+                        <i class="fa-solid fa-calculator text-blue-600"></i>
+                        <span>Xero Accounting</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 font-display font-bold text-base sm:text-lg">
+                        <i class="fa-solid fa-landmark text-navy-900"></i>
+                        <span>FBR & SECP Compliant</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 font-display font-bold text-base sm:text-lg">
+                        <i class="fa-solid fa-globe text-indigo-600"></i>
+                        <span>Upwork & Fiverr Agency</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CORE SERVICES SECTION (INTERACTIVE TABS) ==================== -->
+    <section id="services" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Dual-Market Expertise</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900">
+                    Tailored Financial & Tax Solutions
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Switch between our Local Tax & Corporate wing and our International Bookkeeping division to explore how we support businesses at every stage.
+                </p>
+
+                <!-- Interactive Pillar Switcher -->
+                <div class="pt-4 inline-flex p-1.5 rounded-2xl bg-slate-100 border border-slate-200/80">
+                    <button id="tab-local" onclick="switchServiceTab('local')" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-navy-900 text-white shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-scale-balanced mr-1.5"></i> Local Tax & Legal (PK)
+                    </button>
+                    <button id="tab-global" onclick="switchServiceTab('global')" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all text-slate-600 hover:text-navy-900 cursor-pointer">
+                        <i class="fa-solid fa-earth-americas mr-1.5"></i> Global Bookkeeping (USD)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pillar 1: Local Tax & Corporate Compliance -->
+            <div id="content-local" class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Individual Tax Returns</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Complete annual income tax filing, wealth statement reconciliation, and Active Taxpayer List (ATL) inclusion for salaried & self-employed individuals.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('Individual Tax Return')" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">AOP & Firm Filings</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Partnership deed drafting, firm NTN registration, and comprehensive annual tax returns tailored for Association of Persons (AOPs) and SMEs.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('AOP & Partnership Tax Filing')" class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Sales Tax & NTN Setup</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Fast-track NTN/STRN registration, monthly sales tax return submissions (FBR & Provincial boards), and withholding tax compliance.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('Sales Tax & NTN Registration')" class="text-xs font-bold text-indigo-700 hover:text-indigo-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Legal & Corporate Advisory</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            End-to-end corporate legal structuring, tax notice replies, audit representation, and regulatory compliance handled by legal specialists.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('Legal & Corporate Advisory')" class="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 2: International Bookkeeping & Accounting (Hidden by Default) -->
+            <div id="content-global" class="hidden mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Global Card 1 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Monthly Reconciliations</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Accurate categorization and reconciliation of multi-currency bank accounts, Stripe/PayPal payouts, and corporate credit cards.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('Monthly Bank Reconciliations')" class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Global Card 2 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">AP & AR Management</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Streamlined Accounts Payable and Receivable tracking, vendor bill management, and client invoicing to keep your cash flow healthy.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('AP & AR Management')" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Global Card 3 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Financial Reporting</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Investor-ready monthly Profit & Loss (P&L), Balance Sheet, and Cash Flow statements delivered on time for US, UK, and UAE entities.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('Monthly Financial Reporting')" class="text-xs font-bold text-indigo-700 hover:text-indigo-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Global Card 4 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-broom"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Catch-up & Clean-up</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Behind on your books? We clean up messy historical records in QuickBooks or Xero and get you 100% tax-season ready fast.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-200/70">
+                        <button onclick="openModal('Bookkeeping Catch-up & Clean-up')" class="text-xs font-bold text-purple-700 hover:text-purple-800 flex items-center gap-1.5 cursor-pointer">
+                            <span>Request Service</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS (3-STEP PROCESS) ==================== -->
+    <section id="how-it-works" class="py-20 bg-navy-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Simple Onboarding</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl">How FinLedger Works</h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    A frictionless digital workflow designed to save you hours of paperwork and compliance headaches.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="p-8 rounded-2xl bg-navy-800/80 border border-slate-700/80 relative">
+                    <span class="text-4xl font-display font-extrabold text-blue-500/30 absolute top-6 right-6">01</span>
+                    <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center text-lg mb-6">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Select Your Plan</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Choose between a one-time tax filing package or a dedicated monthly bookkeeping retainer tailored to your business size.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-8 rounded-2xl bg-navy-800/80 border border-slate-700/80 relative">
+                    <span class="text-4xl font-display font-extrabold text-emerald-500/30 absolute top-6 right-6">02</span>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-lg mb-6">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Secure Onboarding</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Share your bank statements, FBR credentials, or QuickBooks/Xero access securely with your dedicated account specialist.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-8 rounded-2xl bg-navy-800/80 border border-slate-700/80 relative">
+                    <span class="text-4xl font-display font-extrabold text-indigo-500/30 absolute top-6 right-6">03</span>
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center text-lg mb-6">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Automated Filings & Reports</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Receive verified tax filing receipts or monthly reconciled P&L and Balance Sheet reports right on schedule.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING & PACKAGES SECTION ==================== -->
+    <section id="pricing" class="py-20 lg:py-28 bg-slate-50 border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Transparent Pricing</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900">
+                    Clear Packages for Local & Global Clients
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    No hidden fees. Start with a single tax return or scale with an all-inclusive monthly accounting partner.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Tier 1: Individual Tax Pro -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-8 flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">Local Tax (PK)</span>
+                            <span class="text-xs font-medium text-slate-400">One-Time Filing</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-navy-900">Individual Tax Pro</h3>
+                        <p class="text-sm text-slate-500 mt-1">Ideal for salaried professionals & freelancers.</p>
+                        
+                        <div class="my-6 pb-6 border-b border-slate-100">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-display font-extrabold text-navy-900">PKR 5,000</span>
+                                <span class="text-sm text-slate-500">/ return</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-slate-600">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Annual Income Tax Return Filing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Wealth Statement & Asset Reconciliation</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>FBR Active Taxpayer (ATL) Status Check</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Expert Tax Consultant Review</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('Individual Tax Pro (PKR 5,000)')" class="mt-8 w-full py-3.5 px-6 rounded-xl bg-slate-100 hover:bg-navy-900 text-navy-900 hover:text-white font-semibold text-sm transition-all cursor-pointer">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Tier 2: Business & AOP Suite (Most Popular) -->
+                <div class="bg-navy-900 text-white rounded-3xl border-2 border-blue-500 p-8 flex flex-col justify-between shadow-2xl relative card-hover">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-white text-xs font-bold uppercase tracking-wider shadow-md">
+                            Most Popular • Corporate & AOP
+                        </span>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-4 mt-2">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30">Business & Legal</span>
+                            <span class="text-xs font-medium text-slate-400">Custom Scale</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white">Business & AOP Suite</h3>
+                        <p class="text-sm text-slate-300 mt-1">Built for Partnerships, AOPs & growing SMEs.</p>
+                        
+                        <div class="my-6 pb-6 border-b border-slate-800">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-display font-extrabold text-white">PKR 25,000</span>
+                                <span class="text-sm text-slate-400">starting</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-1">Scales up to PKR 50k–100k+ based on turnover</p>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-slate-200">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span>Complete AOP / Partnership Tax Filing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span>Sales Tax Registration & Monthly Compliance</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span>Legal & Corporate Compliance Advisory</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span>Dedicated Tax & Legal Specialist</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span>Priority WhatsApp & Call Support</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('Business & AOP Suite (PKR 25,000+)')" class="mt-8 w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all cursor-pointer">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Tier 3: Global Bookkeeping Retainer -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-8 flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">International (USD)</span>
+                            <span class="text-xs font-medium text-slate-400">Monthly Retainer</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-navy-900">Global Bookkeeping</h3>
+                        <p class="text-sm text-slate-500 mt-1">For US, UK, UAE startups & e-commerce brands.</p>
+                        
+                        <div class="my-6 pb-6 border-b border-slate-100">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-display font-extrabold text-navy-900">$299</span>
+                                <span class="text-sm text-slate-500">/ month</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-slate-600">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Dedicated Certified Bookkeeper</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Full QuickBooks Online / Xero Management</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Monthly P&L, Balance Sheet & Cash Flow</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Bank, Credit Card & Stripe Reconciliations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                <span>Unlimited Email & Slack Support</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('Global Bookkeeping Retainer ($299/mo)')" class="mt-8 w-full py-3.5 px-6 rounded-xl bg-slate-100 hover:bg-navy-900 text-navy-900 hover:text-white font-semibold text-sm transition-all cursor-pointer">
+                        Get Started
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US SECTION ==================== -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-5">
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Why FinLedger Global</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 leading-tight">
+                        Built for Modern Founders & Growing Enterprises.
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Unlike traditional accounting firms that drown you in paperwork, we combine certified financial expertise with cloud-first workflows.
+                    </p>
+                    <div class="pt-2">
+                        <button onclick="openModal('Custom Enterprise Inquiry')" class="px-6 py-3.5 rounded-xl bg-navy-900 hover:bg-blue-600 text-white text-sm font-semibold transition-all cursor-pointer">
+                            Talk to Our Team
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70">
+                        <i class="fa-solid fa-lock text-blue-600 text-xl mb-3"></i>
+                        <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Bank-Grade Confidentiality</h4>
+                        <p class="text-sm text-slate-600">Strict NDA protocols and encrypted document handling to keep your financial data 100% secure.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70">
+                        <i class="fa-solid fa-bolt text-emerald-600 text-xl mb-3"></i>
+                        <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Zero-Deadline Misses</h4>
+                        <p class="text-sm text-slate-600">Proactive calendar tracking for FBR returns, sales tax filings, and monthly book closings.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70">
+                        <i class="fa-solid fa-handshake text-indigo-600 text-xl mb-3"></i>
+                        <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Legal + Accounting Synergy</h4>
+                        <p class="text-sm text-slate-600">In-house legal and tax experts ensure your filings align with corporate regulations.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70">
+                        <i class="fa-solid fa-headset text-amber-600 text-xl mb-3"></i>
+                        <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Direct Partner Access</h4>
+                        <p class="text-sm text-slate-600">No robotic ticket queues—communicate directly with your assigned tax or bookkeeping lead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-navy-900 text-slate-300 pt-16 pb-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                <!-- Brand Col -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <span class="font-display font-extrabold text-xl text-white">FinLedger Global</span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+                        Your trusted agency partner for local tax filings, legal compliance, and international cloud bookkeeping. Empowering businesses locally and globally.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-pink-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="X Twitter" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-x-twitter text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-blue-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Local Tax Services</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Global Bookkeeping</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing & Packages</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Get In Touch</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-blue-400"></i>
+                            <span>hello@finledgerglobal.demo</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <span>+92 300 0000000 (Demo)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-globe text-indigo-400"></i>
+                            <span>Serving PK, US, UK & UAE</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Disclaimer Bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 FinLedger Global. All rights reserved.</p>
+                <div class="px-3 py-1.5 rounded-lg bg-navy-800 border border-slate-700 text-slate-300 font-medium">
+                    <i class="fa-solid fa-flask text-emerald-400 mr-1.5"></i>
+                    Demo MVP Prototype — Ready for Brand & Service Customization
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING WHATSAPP DEMO BUTTON ==================== -->
+    <button onclick="openModal('Quick WhatsApp / Direct Inquiry')" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-600/30 flex items-center justify-center text-2xl transition-transform hover:scale-110 cursor-pointer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+    <!-- ==================== INTERACTIVE CONSULTATION / LEAD MODAL ==================== -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-900/70 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-fadeIn">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Form View -->
+            <div id="modal-form-view">
+                <div class="mb-6">
+                    <span class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">Free Consultation</span>
+                    <h3 class="font-display font-extrabold text-2xl text-navy-900 mt-2">Let's Discuss Your Requirements</h3>
+                    <p class="text-sm text-slate-500 mt-1">Fill out the details below and our tax/bookkeeping lead will reach out shortly.</p>
+                </div>
+
+                <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Full Name / Business Name *</label>
+                        <input type="text" id="client-name" required placeholder="e.g., Ali Raza / TechSolutions AOP" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20">
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">WhatsApp / Phone *</label>
+                            <input type="text" id="client-phone" required placeholder="+92 300 1234567" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email Address *</label>
+                            <input type="email" id="client-email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Selected Plan / Service</label>
+                        <select id="selected-plan" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm bg-slate-50 font-medium text-navy-900 focus:outline-none focus:border-blue-600">
+                            <option value="General Strategy Consultation">General Strategy Consultation</option>
+                            <option value="Individual Tax Pro (PKR 5,000)">Individual Tax Pro (PKR 5,000)</option>
+                            <option value="Business & AOP Suite (PKR 25,000+)">Business & AOP Suite (PKR 25,000+)</option>
+                            <option value="Global Bookkeeping Retainer ($299/mo)">Global Bookkeeping Retainer ($299/mo)</option>
+                            <option value="Legal & Corporate Advisory">Legal & Corporate Advisory</option>
+                            <option value="Custom Enterprise Inquiry">Custom Enterprise Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Brief Message (Optional)</label>
+                        <textarea id="client-message" rows="2" placeholder="Tell us briefly about your tax filing or monthly bookkeeping needs..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-navy-900 hover:bg-blue-600 text-white font-semibold text-sm shadow-lg transition-all cursor-pointer">
+                        Confirm & Request Callback
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Confirmation View (Hidden initially) -->
+            <div id="modal-success-view" class="hidden text-center py-6 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="font-display font-extrabold text-2xl text-navy-900">Request Received!</h3>
+                <p class="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
+                    Thank you, <span id="confirm-name" class="font-bold text-navy-900"></span>! Your inquiry for <span id="confirm-plan" class="font-bold text-blue-600"></span> has been logged. Our specialist will contact you shortly.
+                </p>
+                <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-800">
+                    <strong>Demo Note:</strong> In production, this form will automatically send leads to your agency CRM, Email, and WhatsApp.
+                </div>
+                <button onclick="closeModal()" class="mt-4 px-6 py-3 rounded-xl bg-navy-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors cursor-pointer">
+                    Back to Website
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+    <script>
+        // 1. Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // 2. Service Pillar Tab Switcher (Local PK vs Global USD)
+        function switchServiceTab(pillar) {
+            const tabLocal = document.getElementById('tab-local');
+            const tabGlobal = document.getElementById('tab-global');
+            const contentLocal = document.getElementById('content-local');
+            const contentGlobal = document.getElementById('content-global');
+
+            if (pillar === 'local') {
+                // Active state for Local
+                tabLocal.classList.add('bg-navy-900', 'text-white', 'shadow-sm');
+                tabLocal.classList.remove('text-slate-600', 'hover:text-navy-900');
+                
+                // Inactive state for Global
+                tabGlobal.classList.remove('bg-navy-900', 'text-white', 'shadow-sm');
+                tabGlobal.classList.add('text-slate-600', 'hover:text-navy-900');
+
+                // Toggle Content
+                contentLocal.classList.remove('hidden');
+                contentGlobal.classList.add('hidden');
+            } else {
+                // Active state for Global
+                tabGlobal.classList.add('bg-navy-900', 'text-white', 'shadow-sm');
+                tabGlobal.classList.remove('text-slate-600', 'hover:text-navy-900');
+
+                // Inactive state for Local
+                tabLocal.classList.remove('bg-navy-900', 'text-white', 'shadow-sm');
+                tabLocal.classList.add('text-slate-600', 'hover:text-navy-900');
+
+                // Toggle Content
+                contentGlobal.classList.remove('hidden');
+                contentLocal.classList.add('hidden');
+            }
+        }
+
+        // 3. Consultation / Lead Capture Modal Logic
+        const modal = document.getElementById('booking-modal');
+        const formView = document.getElementById('modal-form-view');
+        const successView = document.getElementById('modal-success-view');
+        const planSelect = document.getElementById('selected-plan');
+
+        function openModal(planName) {
+            // Reset views
+            formView.classList.remove('hidden');
+            successView.classList.add('hidden');
+
+            // Pre-select matching option or add temporary option
+            let optionExists = false;
+            for (let i = 0; i < planSelect.options.length; i++) {
+                if (planSelect.options[i].value === planName) {
+                    planSelect.selectedIndex = i;
+                    optionExists = true;
+                    break;
+                }
+            }
+            if (!optionExists && planName) {
+                const newOpt = new Option(planName, planName, true, true);
+                planSelect.add(newOpt);
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal when clicking outside card
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 4. Demo Form Submission Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const plan = document.getElementById('selected-plan').value;
+
+            document.getElementById('confirm-name').textContent = name;
+            document.getElementById('confirm-plan').textContent = plan;
+
+            formView.classList.add('hidden');
+            successView.classList.remove('hidden');
+            document.getElementById('lead-form').reset();
+        }
+    </script>
+</body>
+</html>
