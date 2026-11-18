@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PakStart — Apna Business Shuru Karo, Papers Hum Sambhalte Hain</title>
+  <meta name="description" content="Pakistan aur Global startups ke liye mukammal Business Registration, Tax Filing, Bookkeeping, aur Compliance Agency. Clear pricing, zero hidden fees." />
+
+  <!-- Google Fonts: Fraunces (Display Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6 for Crisp Corporate & UI Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind Custom Design Tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#071633',
+              light: '#0e244f',
+              dark: '#040d1f',
+              muted: '#1a3365'
+            },
+            emerald: {
+              brand: '#0d9a6d',
+              dark: '#097955',
+              light: '#e6f7f1'
+            },
+            gold: {
+              brand: '#d5a832',
+              dark: '#b88d1f',
+              light: '#fbf6e8'
+            },
+            surface: '#f8fafc'
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            'card': '0 10px 30px -5px rgba(7, 22, 51, 0.06), 0 4px 12px -2px rgba(7, 22, 51, 0.03)',
+            'card-hover': '0 20px 40px -10px rgba(7, 22, 51, 0.12)',
+            'glow-emerald': '0 10px 25px -5px rgba(13, 154, 109, 0.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle grid background for Hero */
+    .hero-pattern {
+      background-color: #071633;
+      background-image: 
+        radial-gradient(at 85% 15%, rgba(13, 154, 109, 0.18) 0px, transparent 50%),
+        radial-gradient(at 10% 85%, rgba(213, 168, 50, 0.14) 0px, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    /* Smooth accordion transition */
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease-out;
+    }
+    .faq-item.active .faq-answer {
+      grid-template-rows: 1fr;
+    }
+    .faq-inner {
+      overflow: hidden;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Subtle pulse on WhatsApp button */
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      70% { transform: scale(1.25); opacity: 0; }
+      100% { transform: scale(1.25); opacity: 0; }
+    }
+    .wa-pulse::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      background-color: #25D366;
+      z-index: -1;
+      animation: pulseRing 2.2s infinite;
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-800 bg-surface antialiased selection:bg-emerald-brand selection:text-white">
+
+  <!-- Blueprint Version Top Ribbon -->
+  <div class="bg-navy-dark text-slate-300 text-xs py-2 px-4 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-gold-brand/20 text-gold-brand font-semibold tracking-wide uppercase text-[10px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-brand animate-pulse"></span>
+          Blueprint v2.0
+        </span>
+        <span>Client-Centric Architecture &bull; Pakistan & Global Ready</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-slate-400">
+        <span><i class="fa-solid fa-shield-halved text-emerald-brand mr-1"></i> 100% Transparent Pricing</span>
+        <span><i class="fa-brands fa-whatsapp text-emerald-brand mr-1"></i> Direct WhatsApp Support</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center text-white shadow-md group-hover:bg-navy-light transition">
+          <span class="font-serif font-bold text-xl text-gold-brand">P</span>
+        </div>
+        <div>
+          <span class="font-serif font-extrabold text-xl tracking-tight text-navy block leading-none">
+            Pak<span class="text-emerald-brand">Start</span>
+          </span>
+          <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-400">Launch & Compliance</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <a href="#services" class="hover:text-navy transition">Services</a>
+        <a href="#quiz" class="hover:text-navy transition flex items-center gap-1.5">
+          Plan Finder
+          <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-light text-emerald-brand font-bold">2-Min</span>
+        </a>
+        <a href="#packages" class="hover:text-navy transition">Packages</a>
+        <a href="#team" class="hover:text-navy transition">Hamari Team</a>
+        <a href="#faq" class="hover:text-navy transition">FAQs</a>
+      </nav>
+
+      <!-- Header CTA & Mobile Menu Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#consultation" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-brand hover:bg-emerald-dark text-white text-sm font-bold shadow-glow-emerald transition transform hover:-translate-y-0.5">
+          <span>Free Call Book Karein</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+        <button id="mobileMenuBtn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl border border-slate-200 text-navy hover:bg-slate-100">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+      <a href="#services" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Services</a>
+      <a href="#quiz" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Find My Plan (Quiz)</a>
+      <a href="#packages" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Packages (PKR & USD)</a>
+      <a href="#team" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Hamari Team</a>
+      <a href="#faq" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">FAQs</a>
+      <div class="pt-2">
+        <a href="#consultation" class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-brand text-white font-bold text-sm">
+          Free Consultation Book Karein
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-pattern text-white relative overflow-hidden pt-14 pb-20 lg:pt-24 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-xs sm:text-sm font-medium text-gold-brand">
+            <i class="fa-solid fa-star"></i>
+            <span>Pakistan's Modern Business Launch & Compliance Partner</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.15] tracking-tight">
+            Apna Business Shuru Karo, <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-gold-brand">Papers Hum Sambhalte Hain.</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Company registration, NTN &amp; FBR tax returns, bookkeeping, aur legal agreements — sab kuch ek hi trusted platform par. Aap sirf apne clients aur growth par focus karein, baqi compliance ki zimmedari hamari.
+          </p>
+
+          <!-- Primary & Secondary CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="#consultation" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emerald-brand hover:bg-emerald-dark text-white font-bold text-base shadow-glow-emerald transition transform hover:-translate-y-0.5">
+              <span>Free 15-Min Call Book Karein</span>
+              <i class="fa-solid fa-calendar-check"></i>
+            </a>
+            <a href="#packages" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-base transition">
+              <span>Packages Dekhein</span>
+              <i class="fa-solid fa-arrow-down text-xs text-gold-brand"></i>
+            </a>
+          </div>
+
+          <!-- Trust Metrics Bar -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-xl">
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl font-bold text-white">5-7 Days</p>
+              <p class="text-xs text-slate-400 mt-0.5">Fast Company Setup</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-brand">100%</p>
+              <p class="text-xs text-slate-400 mt-0.5">Clear Upfront Fees</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl font-bold text-emerald-400">PK + Global</p>
+              <p class="text-xs text-slate-400 mt-0.5">Local &amp; US LLC Support</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Executive Dashboard Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-navy-light/90 border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-md relative">
+            <!-- Decorative Gold Badge -->
+            <div class="absolute -top-4 right-6 bg-gold-brand text-navy-dark text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
+              One-Window Solution
+            </div>
+
+            <div class="flex items-center justify-between pb-5 border-b border-white/10">
+              <div>
+                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Client Compliance Tracker</p>
+                <h3 class="font-serif text-xl font-bold text-white mt-0.5">Startup Launch Checklist</h3>
+              </div>
+              <div class="w-11 h-11 rounded-2xl bg-emerald-brand/20 border border-emerald-brand/40 flex items-center justify-center text-emerald-400">
+                <i class="fa-solid fa-file-shield text-lg"></i>
+              </div>
+            </div>
+
+            <!-- Simulated Live Milestones -->
+            <div class="space-y-3.5 my-6">
+              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-navy/80 border border-white/10">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-emerald-brand text-white flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                  <div>
+                    <p class="text-sm font-bold text-white">Company Name &amp; Incorporation</p>
+                    <p class="text-xs text-slate-400">SECP / US State Filing Completed</p>
+                  </div>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-brand/20 text-emerald-400">Done</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-navy/80 border border-white/10">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-emerald-brand text-white flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                  <div>
+                    <p class="text-sm font-bold text-white">NTN, Active Taxpayer &amp; Bank Letter</p>
+                    <p class="text-xs text-slate-400">FBR ATL Status Verified</p>
+                  </div>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-brand/20 text-emerald-400">Done</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-navy/80 border border-gold-brand/40">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-gold-brand text-navy-dark flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-rotate"></i></span>
+                  <div>
+                    <p class="text-sm font-bold text-white">Monthly Books &amp; Tax Returns</p>
+                    <p class="text-xs text-slate-400">Automated WhatsApp Updates</p>
+                  </div>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-gold-brand/20 text-gold-brand">Active</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
+                <p class="text-xs text-slate-300">Har step ki update seedha aap ke <strong class="text-white">WhatsApp</strong> par milti hai.</p>
+              </div>
+              <a href="#quiz" class="shrink-0 text-xs font-bold text-gold-brand hover:underline">Find Plan &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION (Strictly Outcome-Based & Client-Centric) -->
+  <section id="services" class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-light text-emerald-brand text-xs font-extrabold uppercase tracking-wider mb-3">
+          Our Core Solutions
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+          Har Business Zaroorat Ka Ek Complete Hal
+        </h2>
+        <p class="text-slate-600 mt-3 text-base sm:text-lg">
+          Aap ko alag-alag offices ke chakkar lagane ki zaroorat nahi. Hum aap ke business ke har marhale ko end-to-end handle karte hain.
+        </p>
+      </div>
+
+      <!-- 6 Outcome-Based Service Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        
+        <!-- Service 1 -->
+        <div class="group bg-surface hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-emerald-brand/40 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl group-hover:scale-105 transition">
+                <i class="fa-solid fa-building-circle-check"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-navy border border-blue-100">
+                Business Setup
+              </span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy mb-2.5">Company Registration (SECP &amp; US LLC)</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Sole Proprietorship, AOP, SMC-Pvt, Private Limited (SECP), ya international clients ke liye US LLC formation — mukammal documentation aur certificate ke sath.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-emerald-brand">
+            <span>Turnaround: 5–7 Working Days</span>
+            <a href="#consultation" onclick="preselectService('Company Registration (SECP / US LLC)')" class="hover:underline">Start Now &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="group bg-surface hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-emerald-brand/40 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl group-hover:scale-105 transition">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-light text-emerald-brand border border-emerald-200">
+                Tax Compliance
+              </span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy mb-2.5">NTN &amp; Annual FBR Tax Filing</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Salaried individuals, freelancers, IT exporters (PSEB), aur companies ke liye NTN registration, Active Taxpayer List (ATL) status, aur annual wealth statements.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-emerald-brand">
+            <span>Zero Penalty Guarantee</span>
+            <a href="#consultation" onclick="preselectService('NTN & FBR Tax Filing')" class="hover:underline">File Taxes &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="group bg-surface hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-emerald-brand/40 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl group-hover:scale-105 transition">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                Sales Tax
+              </span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy mb-2.5">GST &amp; Provincial Tax (SRB / PRA)</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Goods aur services businesses ke liye FBR Sales Tax (STRN), Sindh Revenue Board (SRB), aur Punjab Revenue Authority (PRA) registration aur monthly returns.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-emerald-brand">
+            <span>Monthly Return Management</span>
+            <a href="#consultation" onclick="preselectService('GST / SRB / PRA Registration')" class="hover:underline">Get Registered &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="group bg-surface hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-emerald-brand/40 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl group-hover:scale-105 transition">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-50 text-purple-800 border border-purple-200">
+                Protection
+              </span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy mb-2.5">Contracts, NDAs &amp; Trademark</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Partnership deeds, client service agreements, employee contracts, NDAs, aur IPO Pakistan ke zariye apna brand name aur logo trademark karwayein.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-emerald-brand">
+            <span>Custom Drafted Agreements</span>
+            <a href="#consultation" onclick="preselectService('Contracts, NDAs & Trademark')" class="hover:underline">Protect Brand &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="group bg-surface hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-emerald-brand/40 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl group-hover:scale-105 transition">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-light text-emerald-brand border border-emerald-200">
+                Monthly Growth
+              </span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy mb-2.5">Cloud Bookkeeping &amp; Payroll</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              QuickBooks aur Xero par rozana ke expenses, invoices, bank reconciliation, aur monthly Profit &amp; Loss reports — local aur international businesses ke liye.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-emerald-brand">
+            <span>Audit-Ready Financial Books</span>
+            <a href="#consultation" onclick="preselectService('Monthly Bookkeeping & Payroll')" class="hover:underline">Organize Books &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="group bg-surface hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-emerald-brand/40 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl group-hover:scale-105 transition">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-gold-light text-amber-900 border border-amber-200">
+                Strategy
+              </span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy mb-2.5">Business Launch &amp; Tax Advisory</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Naya startup shuru karne se pehle sahi business structure ka intekhab, tax-saving planning, aur bank account opening documentation ki mukammal guidance.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-emerald-brand">
+            <span>1-on-1 Roadmap Session</span>
+            <a href="#consultation" onclick="preselectService('Business Launch & Tax Advisory')" class="hover:underline">Book Advisory &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE 'FIND MY PLAN' 2-QUESTION QUIZ -->
+  <section id="quiz" class="py-16 lg:py-20 bg-navy text-white relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gold-brand/20 text-gold-brand text-xs font-extrabold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Interactive Plan Finder
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold">
+          Apne Business Ke Liye Sahi Plan Chunein
+        </h2>
+        <p class="text-slate-300 mt-2 text-sm sm:text-base">
+          Sirf 2 asaan sawalon ke jawab dein aur apna best-fit package dekhein.
+        </p>
+      </div>
+
+      <div class="bg-navy-light border border-white/15 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        <!-- Question 1 -->
+        <div class="mb-8">
+          <label class="block text-xs font-bold uppercase tracking-wider text-gold-brand mb-2">
+            Step 1 of 2 &bull; Market &amp; Stage
+          </label>
+          <h3 class="font-serif text-xl font-bold mb-4">Aap ka business kis market mein operate kar raha hai?</h3>
+          <div class="grid sm:grid-cols-2 gap-3.5" id="quizStep1">
+            <button type="button" data-market="pk" class="quiz-btn-1 active text-left p-4 rounded-2xl border-2 border-emerald-brand bg-emerald-brand/15 transition flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-brand text-white flex items-center justify-center shrink-0 font-bold text-sm">PK</span>
+              <div>
+                <p class="font-bold text-white text-sm">Pakistan Local / Freelancer</p>
+                <p class="text-xs text-slate-300 mt-0.5">SECP, FBR NTN, local bank, ya IT export</p>
+              </div>
+            </button>
+            <button type="button" data-market="global" class="quiz-btn-1 text-left p-4 rounded-2xl border-2 border-white/10 bg-navy/60 hover:border-white/30 transition flex items-start gap-3.5">
+              <span class="w-8 h-8 rounded-xl bg-gold-brand text-navy-dark flex items-center justify-center shrink-0 font-bold text-sm"><i class="fa-solid fa-globe"></i></span>
+              <div>
+                <p class="font-bold text-white text-sm">Global / US LLC / E-Commerce</p>
+                <p class="text-xs text-slate-300 mt-0.5">US company setup, Stripe/Mercury, ya bookkeeping</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="mb-8">
+          <label class="block text-xs font-bold uppercase tracking-wider text-gold-brand mb-2">
+            Step 2 of 2 &bull; Primary Goal
+          </label>
+          <h3 class="font-serif text-xl font-bold mb-4">Abhi aap ki sab se pehli zaroorat kya hai?</h3>
+          <div class="grid sm:grid-cols-3 gap-3.5" id="quizStep2">
+            <button type="button" data-goal="launch" class="quiz-btn-2 active text-left p-4 rounded-2xl border-2 border-emerald-brand bg-emerald-brand/15 transition">
+              <i class="fa-solid fa-rocket text-gold-brand text-lg mb-2 block"></i>
+              <p class="font-bold text-white text-sm">Naya Business Setup</p>
+              <p class="text-xs text-slate-300 mt-1">Company registration &amp; tax number chahiye</p>
+            </button>
+            <button type="button" data-goal="compliance" class="quiz-btn-2 text-left p-4 rounded-2xl border-2 border-white/10 bg-navy/60 hover:border-white/30 transition">
+              <i class="fa-solid fa-shield-check text-emerald-400 text-lg mb-2 block"></i>
+              <p class="font-bold text-white text-sm">Tax &amp; Legal Protection</p>
+              <p class="text-xs text-slate-300 mt-1">Returns filing, contracts &amp; full compliance</p>
+            </button>
+            <button type="button" data-goal="retainer" class="quiz-btn-2 text-left p-4 rounded-2xl border-2 border-white/10 bg-navy/60 hover:border-white/30 transition">
+              <i class="fa-solid fa-briefcase text-sky-400 text-lg mb-2 block"></i>
+              <p class="font-bold text-white text-sm">Monthly Operations</p>
+              <p class="text-xs text-slate-300 mt-1">Dedicated monthly bookkeeping &amp; advisory</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation Box -->
+        <div id="quizResultBox" class="p-6 rounded-2xl bg-gradient-to-r from-navy-dark to-navy border border-gold-brand/50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <span class="inline-block px-2.5 py-0.5 rounded bg-emerald-brand/20 text-emerald-400 text-[11px] font-bold uppercase tracking-wider mb-1.5">
+              Recommended For You
+            </span>
+            <h4 id="recTitle" class="font-serif text-2xl font-bold text-white">Starter Launch Package</h4>
+            <p id="recDesc" class="text-slate-300 text-sm mt-1">SECP / Business Registration + FBR NTN + Active Taxpayer status — ek hi baar mein mukammal setup.</p>
+            <p id="recPrice" class="text-gold-brand font-extrabold text-lg mt-2">Rs 18,000 <span class="text-xs font-normal text-slate-400">(One-Time Fee)</span></p>
+          </div>
+          <a href="#consultation" id="recApplyBtn" onclick="applyQuizPlan()" class="shrink-0 w-full md:w-auto text-center px-6 py-3.5 rounded-xl bg-gold-brand hover:bg-gold-dark text-navy-dark font-extrabold text-sm shadow-lg transition">
+            Apply for This Plan &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUAL-MARKET PACKAGES SECTION (Pakistan PKR vs Global USD) -->
+  <section id="packages" class="py-20 lg:py-24 bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header & Currency/Market Switcher -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-3">
+          Transparent Packages
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+          Seedhi Pricing, Koi Hidden Charges Nahi
+        </h2>
+        <p class="text-slate-600 mt-3 text-base">
+          Apni market ke mutabiq package select karein. Tamam plans mein dedicated specialists aur WhatsApp support shamil hai.
+        </p>
+
+        <!-- Interactive Market Toggle Switch -->
+        <div class="inline-flex items-center p-1.5 rounded-2xl bg-white border border-slate-200 shadow-sm mt-7">
+          <button type="button" id="btnMarketPK" onclick="switchMarket('pk')" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-navy text-white shadow transition flex items-center gap-2">
+            <span>🇵🇰 Pakistan (PKR)</span>
+          </button>
+          <button type="button" id="btnMarketGlobal" onclick="switchMarket('global')" class="px-5 py-2.5 rounded-xl text-sm font-bold text-slate-600 hover:text-navy transition flex items-center gap-2">
+            <span>🌍 Global / US LLC (USD)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PAKISTAN (PKR) PACKAGES GRID -->
+      <div id="gridMarketPK" class="grid lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- PK Plan 1: Starter -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">01 &bull; Launch</span>
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">One-Time</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-navy">Starter</h3>
+            <p class="text-slate-500 text-sm mt-1">Naye founders aur freelancers ke liye fast registration.</p>
+            
+            <div class="my-6 pb-6 border-b border-slate-100">
+              <span class="font-serif text-4xl font-extrabold text-navy">Rs 18,000</span>
+              <span class="text-slate-500 text-sm font-medium"> / One-Time</span>
+              <p class="text-xs text-slate-400 mt-1">*Govt challan fees at actuals</p>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Business / Company Name Reservation &amp; Registration</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>FBR NTN Registration &amp; Active Taxpayer (ATL) Setup</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Business Bank Account Opening Documentation</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>1-on-1 Expert Advisory Onboarding Call</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4">
+            <a href="#consultation" onclick="selectPackage('Starter — Rs 18,000 (One-Time)')" class="block w-full text-center py-3.5 px-5 rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold text-sm transition">
+              Starter Select Karein
+            </a>
+          </div>
+        </div>
+
+        <!-- PK Plan 2: Tax + Compliance (Most Popular) -->
+        <div class="bg-navy text-white rounded-3xl p-8 border-2 border-gold-brand shadow-2xl relative flex flex-col justify-between transform lg:-translate-y-3">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold-brand text-navy-dark text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow">
+            Most Popular
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-gold-brand">02 &bull; Complete Peace of Mind</span>
+              <span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 text-xs font-bold">Annual Plan</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white">Tax + Compliance</h3>
+            <p class="text-slate-300 text-sm mt-1">Registered businesses ke liye saal bhar ki mukammal compliance.</p>
+            
+            <div class="my-6 pb-6 border-b border-white/10">
+              <span class="font-serif text-4xl font-extrabold text-white">Rs 45,000</span>
+              <span class="text-slate-300 text-sm font-medium"> / Saal</span>
+              <p class="text-xs text-emerald-400 mt-1">Save Rs 15,000+ compared to separate filings</p>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-200">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>Annual Income Tax Return &amp; Wealth Statement Filing</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>SECP Annual Form-A / Form-29 Compliance Filings</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>Complete Contract &amp; Compliance Review (2 Agreements)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>FBR Notice Handling &amp; Quarterly 1-on-1 Expert Advisory</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>Priority WhatsApp Support Group</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4">
+            <a href="#consultation" onclick="selectPackage('Tax + Compliance — Rs 45,000 / Saal')" class="block w-full text-center py-4 px-5 rounded-xl bg-emerald-brand hover:bg-emerald-dark text-white font-bold text-sm shadow-glow-emerald transition">
+              Tax + Compliance Chunein &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- PK Plan 3: Business-in-a-Box -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">03 &bull; Growth Retainer</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-light text-emerald-brand text-xs font-bold">Monthly</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-navy">Business-in-a-Box</h3>
+            <p class="text-slate-500 text-sm mt-1">Growing startups aur agencies ke liye dedicated back-office.</p>
+            
+            <div class="my-6 pb-6 border-b border-slate-100">
+              <span class="font-serif text-4xl font-extrabold text-navy">Rs 12,000</span>
+              <span class="text-slate-500 text-sm font-medium"> / Mahina</span>
+              <p class="text-xs text-slate-400 mt-1">Cancel or upgrade anytime</p>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Monthly Bookkeeping, Expense Tracking &amp; P&amp;L Report</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Monthly Sales Tax (GST / SRB / PRA) Return Filing</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Employee Payroll &amp; Withholding Tax Statements</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Dedicated Specialists &amp; Monthly Strategy Review</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4">
+            <a href="#consultation" onclick="selectPackage('Business-in-a-Box — Rs 12,000 / Mahina')" class="block w-full text-center py-3.5 px-5 rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold text-sm transition">
+              Monthly Plan Start Karein
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GLOBAL / US LLC (USD) PACKAGES GRID (Hidden by default) -->
+      <div id="gridMarketGlobal" class="hidden grid lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Global Plan 1 -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">01 &bull; Global Launch</span>
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">One-Time</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-navy">US LLC &amp; EIN Launch</h3>
+            <p class="text-slate-500 text-sm mt-1">Non-US residents &amp; global founders ke liye complete US entity.</p>
+            
+            <div class="my-6 pb-6 border-b border-slate-100">
+              <span class="font-serif text-4xl font-extrabold text-navy">$299</span>
+              <span class="text-slate-500 text-sm font-medium"> / One-Time</span>
+              <p class="text-xs text-slate-400 mt-1">+ State filing fee (Wyoming / Delaware)</p>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>US LLC Formation &amp; Articles of Organization</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>IRS EIN (Employer Identification Number) Acquisition</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Operating Agreement &amp; US Business Bank Account Guidance</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>1-on-1 Expert Advisory Setup Call</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4">
+            <a href="#consultation" onclick="selectPackage('US LLC & EIN Launch — $299 (One-Time)')" class="block w-full text-center py-3.5 px-5 rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold text-sm transition">
+              Launch US LLC
+            </a>
+          </div>
+        </div>
+
+        <!-- Global Plan 2 (Most Popular) -->
+        <div class="bg-navy text-white rounded-3xl p-8 border-2 border-gold-brand shadow-2xl relative flex flex-col justify-between transform lg:-translate-y-3">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold-brand text-navy-dark text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow">
+            Best For Agencies &amp; SaaS
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-gold-brand">02 &bull; All-In-One</span>
+              <span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 text-xs font-bold">Monthly</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white">Tax &amp; Compliance Pro</h3>
+            <p class="text-slate-300 text-sm mt-1">Federal IRS filings, BOI reporting, aur contract protection.</p>
+            
+            <div class="my-6 pb-6 border-b border-white/10">
+              <span class="font-serif text-4xl font-extrabold text-white">$199</span>
+              <span class="text-slate-300 text-sm font-medium"> / Month</span>
+              <p class="text-xs text-emerald-400 mt-1">Includes Annual IRS Form 5472 / 1120</p>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-200">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>Annual Federal Tax Return &amp; Foreign-Owned LLC Filings</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>State Annual Report &amp; Registered Agent Renewal</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>Complete Contract &amp; Compliance Review (MSA / NDA)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-gold-brand mt-0.5"></i>
+                <span>Dedicated Specialists &amp; 1-on-1 Expert Advisory</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4">
+            <a href="#consultation" onclick="selectPackage('Tax & Compliance Pro — $199 / Month')" class="block w-full text-center py-4 px-5 rounded-xl bg-emerald-brand hover:bg-emerald-dark text-white font-bold text-sm shadow-glow-emerald transition">
+              Start Compliance Pro &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Global Plan 3 -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">03 &bull; Cloud Finance</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-light text-emerald-brand text-xs font-bold">Monthly</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-navy">Dedicated Bookkeeping</h3>
+            <p class="text-slate-500 text-sm mt-1">US/UK/UAE e-commerce stores aur startups ke liye clean books.</p>
+            
+            <div class="my-6 pb-6 border-b border-slate-100">
+              <span class="font-serif text-4xl font-extrabold text-navy">$349</span>
+              <span class="text-slate-500 text-sm font-medium"> / Month</span>
+              <p class="text-xs text-slate-400 mt-1">QuickBooks Online or Xero included</p>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Weekly Transaction Categorization &amp; Bank Reconciliation</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Stripe, Shopify, Amazon &amp; Wise Payout Matching</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Monthly P&amp;L, Balance Sheet &amp; Cash Flow Statements</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-brand mt-0.5"></i>
+                <span>Tax-Ready Year-End Financial Package</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4">
+            <a href="#consultation" onclick="selectPackage('Dedicated Bookkeeping — $349 / Month')" class="block w-full text-center py-3.5 px-5 rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold text-sm transition">
+              Hire Bookkeeping Team
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Localized Payment Methods Trust Strip -->
+      <div class="mt-12 bg-white rounded-2xl p-5 border border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-light text-emerald-brand flex items-center justify-center">
+            <i class="fa-solid fa-wallet text-lg"></i>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-navy">Easy &amp; Flexible Payment Options</p>
+            <p class="text-xs text-slate-500">50% advance par kaam shuru, baqi 50% delivery par.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2.5 text-xs font-bold">
+          <span class="px-3.5 py-2 rounded-xl bg-slate-100 text-navy"><i class="fa-solid fa-building-columns text-emerald-brand mr-1.5"></i>Bank Transfer (IBFT)</span>
+          <span class="px-3.5 py-2 rounded-xl bg-slate-100 text-navy"><i class="fa-solid fa-mobile-screen text-emerald-brand mr-1.5"></i>JazzCash / Easypaisa</span>
+          <span class="px-3.5 py-2 rounded-xl bg-slate-100 text-navy"><i class="fa-solid fa-globe text-gold-brand mr-1.5"></i>Wise / Payoneer / Card</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HAMARI TEAM (Multidisciplinary Backend Credibility - Unified Agency Positioning) -->
+  <section id="team" class="py-20 lg:py-24 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Narrative -->
+        <div class="lg:col-span-5 space-y-5">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-gold-light text-amber-900 text-xs font-extrabold uppercase tracking-wider">
+            Hamari Team &amp; Strength
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+            Ek Agency, Teen Specialized Departments
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed">
+            Aam taur par startups ko lawyer, tax consultant, aur accountant alag-alag dhoondhne parte hain — jis se coordination toot jati hai.
+          </p>
+          <p class="text-slate-600 text-base leading-relaxed">
+            <strong>PakStart</strong> mein aap ko ek hi point-of-contact milta hai, jabke piche hamari qualified multidisciplinary team mil kar aap ki file ko zero-error ke sath complete karti hai.
+          </p>
+
+          <div class="pt-2">
+            <div class="p-4 rounded-2xl bg-surface border border-slate-200 flex items-center gap-3.5">
+              <i class="fa-solid fa-user-shield text-2xl text-emerald-brand"></i>
+              <p class="text-xs sm:text-sm text-slate-700 font-medium">
+                Har client file par <strong class="text-navy">Double-Verification Process</strong> lagoo hota hai taake koi notice ya penalty na aaye.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 3 Expert Pillars -->
+        <div class="lg:col-span-7 grid sm:grid-cols-3 gap-6">
+          
+          <!-- Pillar 1 -->
+          <div class="bg-surface rounded-3xl p-6 border border-slate-200/80 shadow-card">
+            <div class="w-12 h-12 rounded-2xl bg-navy text-white flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy mb-2">Corporate &amp; Legal Specialists</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Licensed corporate lawyers jo SECP incorporation, partnership deeds, IP trademarks, aur commercial contracts draft aur verify karte hain.
+            </p>
+            <span class="inline-block text-[11px] font-bold text-emerald-brand bg-emerald-light px-2.5 py-1 rounded-lg">
+              Regulatory &amp; Contracts
+            </span>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-surface rounded-3xl p-6 border border-slate-200/80 shadow-card">
+            <div class="w-12 h-12 rounded-2xl bg-navy text-gold-brand flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy mb-2">Chartered Accountants &amp; Tax Advisors</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Experienced CAs aur tax practitioners jo FBR returns, sales tax compliance, audit-ready financial statements, aur tax optimization sambhalte hain.
+            </p>
+            <span class="inline-block text-[11px] font-bold text-emerald-brand bg-emerald-light px-2.5 py-1 rounded-lg">
+              Taxation &amp; Financial Audits
+            </span>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-surface rounded-3xl p-6 border border-slate-200/80 shadow-card">
+            <div class="w-12 h-12 rounded-2xl bg-navy text-emerald-400 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy mb-2">Operations &amp; Tech Specialists</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Dedicated client managers aur cloud accounting experts jo aap ke WhatsApp updates, cloud dashboards, aur timely deadlines ko track karte hain.
+            </p>
+            <span class="inline-block text-[11px] font-bold text-emerald-brand bg-emerald-light px-2.5 py-1 rounded-lg">
+              Client Success &amp; Systems
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PAKSTART & CLIENT PROMISES -->
+  <section class="py-16 bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="font-serif text-3xl font-extrabold">Founders PakStart Par Bharosa Kyun Karte Hain?</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <i class="fa-solid fa-handshake-simple text-2xl text-gold-brand mb-3"></i>
+          <h3 class="font-bold text-base mb-1.5">No Fake Promises</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Jo kaam jitne din mein mumkin hai, pehle din hi clear timeline batai jati hai.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <i class="fa-solid fa-tags text-2xl text-emerald-400 mb-3"></i>
+          <h3 class="font-bold text-base mb-1.5">Clear Upfront Pricing</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Service fee aur sarkari challan alag-alag likhe jate hain — koi achanak bill nahi.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <i class="fa-brands fa-whatsapp text-2xl text-[#25D366] mb-3"></i>
+          <h3 class="font-bold text-base mb-1.5">Real-Time WhatsApp Updates</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Har submission aur certificate ki PDF copy foran aap ke WhatsApp par bheji jati hai.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <i class="fa-solid fa-rotate-left text-2xl text-sky-400 mb-3"></i>
+          <h3 class="font-bold text-base mb-1.5">Free Error Correction</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Agar hamari taraf se kisi filing mein koi ghalti ho, toh uski correction 100% free hogi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section id="faq" class="py-20 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-light text-emerald-brand text-xs font-extrabold uppercase tracking-wider mb-3">
+          Aam Sawalat (FAQs)
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-navy">
+          Aap Ke Sawal, Hamare Seedhe Jawab
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="faqContainer">
+        <!-- FAQ 1 -->
+        <div class="faq-item active bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy text-base">
+            <span>Company register karwane mein kitne din lagte hain?</span>
+            <i class="fa-solid fa-chevron-down faq-icon text-emerald-brand transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-inner px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              SECP Private Limited ya SMC-Pvt company registration mein aam taur par <strong>5 se 7 working days</strong> lagte hain (agar name reservation clear ho). Sole Proprietorship aur FBR NTN 24 se 48 ghanton mein mukammal ho jata hai.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy text-base">
+            <span>Kya mujhe aap ke office aana parega ya sab online ho sakta hai?</span>
+            <i class="fa-solid fa-chevron-down faq-icon text-emerald-brand transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-inner px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Sab kuch <strong>100% online aur digital</strong> hota hai. Aap Pakistan ke kisi bhi shehar mein hon ya overseas, documents WhatsApp ya Email par share honge aur tamaam certificates soft + hard copy mein deliver kiye jayenge.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy text-base">
+            <span>Main freelancer hoon / IT export karta hoon, mere liye kaun sa setup behtar hai?</span>
+            <i class="fa-solid fa-chevron-down faq-icon text-emerald-brand transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-inner px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Freelancers aur IT exporters ke liye Sole Proprietorship + FBR NTN + PSEB Registration sab se behtar rehta hai, jis se IT export income par sirf 0.25% final tax lagta hai. Agar international clients ko US bank account chahiye toh hamara <strong>US LLC Launch</strong> package best hai.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy text-base">
+            <span>Kya packages ki fees mein government challan shamil hain?</span>
+            <i class="fa-solid fa-chevron-down faq-icon text-emerald-brand transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-inner px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Nahi, hamari website par likhi gayi fees hamari professional service fees hain. SECP ya FBR ke official government challans aap ke capital aur business type ke mutabiq actual par generate hote hain aur seedha sarkari khazane mein jama hote hain.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION BOOKING FORM + LIVE AGENCY LEAD INBOX PREVIEW -->
+  <section id="consultation" class="py-20 lg:py-24 bg-white border-t border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-navy rounded-3xl overflow-hidden shadow-2xl grid lg:grid-cols-12">
+        
+        <!-- Left Info Column -->
+        <div class="lg:col-span-5 p-8 sm:p-10 bg-gradient-to-br from-navy-dark to-navy text-white flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-emerald-brand/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+              Free 15-Min Discovery Call
+            </span>
+            <h2 class="font-serif text-3xl font-extrabold leading-tight">
+              Apne Business Ka Agla Qadam Aaj Uthayein
+            </h2>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Apni details fill karein. Hamari team 2 ghanton ke andar aap se WhatsApp ya phone par rabta karegi — bilkul free, zero obligation.
+            </p>
+
+            <div class="space-y-4 mt-8">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gold-brand">
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Direct WhatsApp Desk</p>
+                  <p class="text-sm font-bold text-white">+92 300 1234567</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-emerald-400">
+                  <i class="fa-solid fa-envelope text-base"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Official Email</p>
+                  <p class="text-sm font-bold text-white">hello@pakstart.pk</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-sky-400">
+                  <i class="fa-solid fa-clock text-base"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Working Hours</p>
+                  <p class="text-sm font-bold text-white">Mon – Sat: 10:00 AM – 7:00 PM PKT</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-white/10">
+            <p class="text-xs text-slate-400 italic">
+              "Aap ka data 100% confidential rehta hai aur kisi third-party ke sath share nahi kiya jata."
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Interactive Form Column -->
+        <div class="lg:col-span-7 p-8 sm:p-10 bg-white">
+          <form id="leadForm" class="space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="clientName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Aap Ka Naam *</label>
+                <input type="text" id="clientName" required placeholder="e.g. Bilal Ahmed" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-brand focus:ring-2 focus:ring-emerald-brand/20 outline-none text-sm transition" />
+              </div>
+              <div>
+                <label for="clientPhone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">WhatsApp Number *</label>
+                <input type="tel" id="clientPhone" required placeholder="e.g. 0300-1234567" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-brand focus:ring-2 focus:ring-emerald-brand/20 outline-none text-sm transition" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="clientBusiness" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Business / Startup Type</label>
+                <select id="clientBusiness" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-brand focus:ring-2 focus:ring-emerald-brand/20 outline-none text-sm bg-white transition">
+                  <option value="New Startup / Idea">Naya Startup Shuru Karna Hai</option>
+                  <option value="Freelancer / IT Export">Freelancer / IT Agency</option>
+                  <option value="E-Commerce / Retail">E-Commerce / Trading Business</option>
+                  <option value="Established Company">Already Registered Company</option>
+                  <option value="US LLC / Global Client">Global / US LLC Client</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="clientPackage" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Service ya Package</label>
+                <select id="clientPackage" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-brand focus:ring-2 focus:ring-emerald-brand/20 outline-none text-sm bg-white transition">
+                  <option value="Free 15-Min Advisory Call">Free 15-Min Advisory Call</option>
+                  <option value="Starter — Rs 18,000 (One-Time)">Starter — Rs 18,000 (One-Time)</option>
+                  <option value="Tax + Compliance — Rs 45,000 / Saal">Tax + Compliance — Rs 45,000 / Saal</option>
+                  <option value="Business-in-a-Box — Rs 12,000 / Mahina">Business-in-a-Box — Rs 12,000 / Mahina</option>
+                  <option value="US LLC & EIN Launch — $299 (One-Time)">US LLC &amp; EIN Launch — $299 (One-Time)</option>
+                  <option value="Tax & Compliance Pro — $199 / Month">Tax &amp; Compliance Pro — $199 / Month</option>
+                  <option value="Dedicated Bookkeeping — $349 / Month">Dedicated Bookkeeping — $349 / Month</option>
+                  <option value="Company Registration (SECP / US LLC)">Company Registration (SECP / US LLC)</option>
+                  <option value="NTN & FBR Tax Filing">NTN &amp; FBR Tax Filing</option>
+                  <option value="GST / SRB / PRA Registration">GST / SRB / PRA Registration</option>
+                  <option value="Contracts, NDAs & Trademark">Contracts, NDAs &amp; Trademark</option>
+                  <option value="Monthly Bookkeeping & Payroll">Monthly Bookkeeping &amp; Payroll</option>
+                  <option value="Business Launch & Tax Advisory">Business Launch &amp; Tax Advisory</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="clientNotes" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Mukhtasar Detail (Optional)</label>
+              <textarea id="clientNotes" rows="3" placeholder="Apne business ya sawal ke baray mein thora batayein..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-brand focus:ring-2 focus:ring-emerald-brand/20 outline-none text-sm transition"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-emerald-brand hover:bg-emerald-dark text-white font-extrabold text-base shadow-glow-emerald transition flex items-center justify-center gap-2">
+              <span>Request Free Consultation</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+
+          <!-- Form Submission Feedback Banner (No alert() used) -->
+          <div id="formFeedback" class="hidden mt-6 p-5 rounded-2xl bg-emerald-light border border-emerald-brand/30">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-brand text-xl mt-0.5"></i>
+              <div class="flex-1">
+                <h4 class="font-bold text-navy text-base">Shukriya! Aap ki request receive ho gayi hai.</h4>
+                <p class="text-xs text-slate-700 mt-1">
+                  Hamari team jald aap ke WhatsApp number par rabta karegi. Agar aap foran baat karna chahein toh neeche button dabayein:
+                </p>
+                <div class="mt-3 flex flex-wrap gap-3">
+                  <a id="directWaSendBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white text-xs font-bold shadow transition">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Send Details via WhatsApp Now</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BLUEPRINT TEAM DEMO: LIVE AGENCY LEAD INBOX PREVIEW -->
+      <div class="mt-10 bg-surface rounded-3xl border border-slate-200 p-6 sm:p-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl bg-navy text-gold-brand flex items-center justify-center text-sm">
+              <i class="fa-solid fa-inbox"></i>
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="font-serif text-lg font-bold text-navy">Team Blueprint Preview: Agency Lead Inbox</h3>
+                <span id="leadCountBadge" class="px-2.5 py-0.5 rounded-full bg-emerald-brand text-white text-xs font-bold">3 Leads</span>
+              </div>
+              <p class="text-xs text-slate-500">Team review ke liye: Jab client form bharega toh agency dashboard mein data is tarah save hoga.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button type="button" id="toggleInboxBtn" onclick="toggleLeadInbox()" class="px-4 py-2 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-navy text-xs font-bold transition">
+              <i class="fa-solid fa-eye mr-1.5"></i><span>Show / Hide Inbox</span>
+            </button>
+            <button type="button" onclick="resetDemoLeads()" class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:text-red-600 text-slate-500 text-xs font-semibold transition" title="Reset Demo Data">
+              <i class="fa-solid fa-rotate"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Collapsible Lead Table -->
+        <div id="leadInboxDrawer" class="mt-6 overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+                <th class="py-3 px-3">Client Name</th>
+                <th class="py-3 px-3">WhatsApp</th>
+                <th class="py-3 px-3">Business Type</th>
+                <th class="py-3 px-3">Selected Package / Service</th>
+                <th class="py-3 px-3">Time</th>
+              </tr>
+            </thead>
+            <tbody id="leadTableBody" class="divide-y divide-slate-200/70 text-slate-700">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-dark text-slate-400 py-14 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-navy-light border border-white/10 flex items-center justify-center">
+              <span class="font-serif font-bold text-lg text-gold-brand">P</span>
+            </div>
+            <span class="font-serif font-extrabold text-xl text-white">Pak<span class="text-emerald-brand">Start</span></span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+            Apna Business Shuru Karo, Papers Hum Sambhalte Hain. Pakistan aur global founders ke liye trusted registration, tax compliance, aur cloud bookkeeping agency.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#services" class="hover:text-white transition">Services</a></li>
+            <li><a href="#quiz" class="hover:text-white transition">Find My Plan Quiz</a></li>
+            <li><a href="#packages" class="hover:text-white transition">PKR &amp; USD Packages</a></li>
+            <li><a href="#team" class="hover:text-white transition">Hamari Team</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Get In Touch</h4>
+          <ul class="space-y-2 text-sm">
+            <li><i class="fa-brands fa-whatsapp text-emerald-brand mr-2"></i>+92 300 1234567</li>
+            <li><i class="fa-solid fa-envelope text-gold-brand mr-2"></i>hello@pakstart.pk</li>
+            <li><i class="fa-solid fa-location-dot text-sky-400 mr-2"></i>Karachi &bull; Lahore &bull; Islamabad (100% Online)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 PakStart Business &amp; Compliance Agency. All rights reserved.</p>
+        <p class="text-slate-500">Blueprint v2.0 &bull; Built for Executive Review</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP QUICK-CHAT BUTTON -->
+  <a href="https://wa.me/923001234567?text=Assalam-o-Alaikum%20PakStart%20Team!%20Mujhe%20apne%20business%20registration%20/%20tax%20compliance%20ke%20baray%20mein%20maloomat%20chahiye." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-2xl wa-pulse transition transform hover:scale-105">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- INTERACTIVE LOGIC (Vanilla JS) -->
+  <script>
+    // 1. Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // 2. Interactive 'Find My Plan' 2-Question Quiz Logic
+    let selectedMarket = 'pk';
+    let selectedGoal = 'launch';
+
+    const quizRecommendations = {
+      'pk-launch': {
+        title: 'Starter Launch Package',
+        desc: 'Business / Company Registration + FBR NTN + Active Taxpayer (ATL) status — ek hi baar mein mukammal setup.',
+        price: 'Rs 18,000',
+        cycle: '(One-Time Fee)',
+        selectValue: 'Starter — Rs 18,000 (One-Time)'
+      },
+      'pk-compliance': {
+        title: 'Tax + Compliance Annual Plan',
+        desc: 'Annual FBR Tax Returns, SECP compliance filings, contract reviews, aur year-round 1-on-1 expert advisory.',
+        price: 'Rs 45,000',
+        cycle: '/ Saal',
+        selectValue: 'Tax + Compliance — Rs 45,000 / Saal'
+      },
+      'pk-retainer': {
+        title: 'Business-in-a-Box Retainer',
+        desc: 'Monthly bookkeeping, sales tax (GST/SRB/PRA) returns, payroll management, aur dedicated specialists.',
+        price: 'Rs 12,000',
+        cycle: '/ Mahina',
+        selectValue: 'Business-in-a-Box — Rs 12,000 / Mahina'
+      },
+      'global-launch': {
+        title: 'US LLC & EIN Launch Package',
+        desc: 'Complete US LLC formation, IRS EIN number, Operating Agreement, aur US business bank guidance.',
+        price: '$299',
+        cycle: '(One-Time Fee)',
+        selectValue: 'US LLC & EIN Launch — $299 (One-Time)'
+      },
+      'global-compliance': {
+        title: 'Global Tax & Compliance Pro',
+        desc: 'Annual IRS Form 5472/1120 filings, state annual reports, registered agent, aur contract compliance review.',
+        price: '$199',
+        cycle: '/ Month',
+        selectValue: 'Tax & Compliance Pro — $199 / Month'
+      },
+      'global-retainer': {
+        title: 'Dedicated Cloud Bookkeeping',
+        desc: 'Weekly QuickBooks/Xero bookkeeping, Stripe/Shopify reconciliation, aur monthly P&L financial statements.',
+        price: '$349',
+        cycle: '/ Month',
+        selectValue: 'Dedicated Bookkeeping — $349 / Month'
+      }
+    };
+
+    function updateQuizResult() {
+      const key = `${selectedMarket}-${selectedGoal}`;
+      const rec = quizRecommendations[key];
+      if (!rec) return;
+
+      document.getElementById('recTitle').textContent = rec.title;
+      document.getElementById('recDesc').textContent = rec.desc;
+      document.getElementById('recPrice').innerHTML = `${rec.price} <span class="text-xs font-normal text-slate-400">${rec.cycle}</span>`;
+    }
+
+    document.querySelectorAll('.quiz-btn-1').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-btn-1').forEach(b => {
+          b.classList.remove('active', 'border-emerald-brand', 'bg-emerald-brand/15');
+          b.classList.add('border-white/10', 'bg-navy/60');
+        });
+        btn.classList.add('active', 'border-emerald-brand', 'bg-emerald-brand/15');
+        btn.classList.remove('border-white/10', 'bg-navy/60');
+        selectedMarket = btn.dataset.market;
+        updateQuizResult();
+        switchMarket(selectedMarket); // Sync packages switcher too
+      });
+    });
+
+    document.querySelectorAll('.quiz-btn-2').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-btn-2').forEach(b => {
+          b.classList.remove('active', 'border-emerald-brand', 'bg-emerald-brand/15');
+          b.classList.add('border-white/10', 'bg-navy/60');
+        });
+        btn.classList.add('active', 'border-emerald-brand', 'bg-emerald-brand/15');
+        btn.classList.remove('border-white/10', 'bg-navy/60');
+        selectedGoal = btn.dataset.goal;
+        updateQuizResult();
+      });
+    });
+
+    function applyQuizPlan() {
+      const key = `${selectedMarket}-${selectedGoal}`;
+      const rec = quizRecommendations[key];
+      if (rec) {
+        selectPackage(rec.selectValue);
+      }
+    }
+
+    // 3. Dual-Market Packages Switcher (PKR vs USD)
+    function switchMarket(market) {
+      const btnPK = document.getElementById('btnMarketPK');
+      const btnGlobal = document.getElementById('btnMarketGlobal');
+      const gridPK = document.getElementById('gridMarketPK');
+      const gridGlobal = document.getElementById('gridMarketGlobal');
+
+      if (market === 'pk') {
+        btnPK.classList.add('bg-navy', 'text-white', 'shadow');
+        btnPK.classList.remove('text-slate-600');
+        btnGlobal.classList.remove('bg-navy', 'text-white', 'shadow');
+        btnGlobal.classList.add('text-slate-600');
+
+        gridPK.classList.remove('hidden');
+        gridGlobal.classList.add('hidden');
+      } else {
+        btnGlobal.classList.add('bg-navy', 'text-white', 'shadow');
+        btnGlobal.classList.remove('text-slate-600');
+        btnPK.classList.remove('bg-navy', 'text-white', 'shadow');
+        btnPK.classList.add('text-slate-600');
+
+        gridGlobal.classList.remove('hidden');
+        gridPK.classList.add('hidden');
+      }
+    }
+
+    // Helper to pre-select package or service in form
+    function selectPackage(val) {
+      const selectEl = document.getElementById('clientPackage');
+      for (let i = 0; i < selectEl.options.length; i++) {
+        if (selectEl.options[i].value === val) {
+          selectEl.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    function preselectService(serviceName) {
+      selectPackage(serviceName);
+    }
+
+    // 4. FAQ Accordion Interaction
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // 5. Working Consultation Form + LocalStorage Live Agency Lead Inbox Preview
+    const STORAGE_KEY = 'pakstart_v2_demo_leads';
+
+    const defaultDemoLeads = [
+      {
+        name: 'Usman Tariq',
+        phone: '0321-8849201',
+        business: 'Freelancer / IT Export',
+        pkg: 'Starter — Rs 18,000 (One-Time)',
+        time: 'Today, 10:15 AM'
+      },
+      {
+        name: 'Ayesha Siddiqui',
+        phone: '0300-5519023',
+        business: 'E-Commerce / Retail',
+        pkg: 'Tax + Compliance — Rs 45,000 / Saal',
+        time: 'Yesterday, 4:40 PM'
+      },
+      {
+        name: 'Zainab & Co. Tech',
+        phone: '+1 (307) 412-8890',
+        business: 'US LLC / Global Client',
+        pkg: 'Dedicated Bookkeeping — $349 / Month',
+        time: 'Nov 16, 2:20 PM'
+      }
+    ];
+
+    function getLeads() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultDemoLeads));
+          return defaultDemoLeads;
+        }
+        return JSON.parse(raw);
+      } catch (e) {
+        return defaultDemoLeads;
+      }
+    }
+
+    function renderLeads() {
+      const leads = getLeads();
+      const tbody = document.getElementById('leadTableBody');
+      const badge = document.getElementById('leadCountBadge');
+      badge.textContent = `${leads.length} Leads`;
+
+      tbody.innerHTML = leads.map((lead, idx) => `
+        <tr class="${idx === 0 ? 'bg-emerald-light/40 font-medium' : ''}">
+          <td class="py-3 px-3 font-bold text-navy">${escapeHTML(lead.name)}</td>
+          <td class="py-3 px-3 font-mono text-xs">${escapeHTML(lead.phone)}</td>
+          <td class="py-3 px-3 text-xs">${escapeHTML(lead.business)}</td>
+          <td class="py-3 px-3">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-navy/5 text-navy text-xs font-bold">
+              ${escapeHTML(lead.pkg)}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-xs text-slate-500">${escapeHTML(lead.time)}</td>
+        </tr>
+      `).join('');
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function resetDemoLeads() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultDemoLeads));
+        renderLeads();
+      } catch (e) {}
+    }
+
+    function toggleLeadInbox() {
+      const drawer = document.getElementById('leadInboxDrawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    document.getElementById('leadForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const business = document.getElementById('clientBusiness').value;
+      const pkg = document.getElementById('clientPackage').value;
+      const notes = document.getElementById('clientNotes').value.trim();
+
+      if (!name || !phone) return;
+
+      const now = new Date();
+      const timeStr = 'Just now (' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ')';
+
+      const newLead = { name, phone, business, pkg, time: timeStr };
+
+      try {
+        const leads = getLeads();
+        leads.unshift(newLead);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+      } catch (err) {}
+
+      renderLeads();
+
+      // Prepare instant WhatsApp deep-link message
+      const waMsg = `Assalam-o-Alaikum PakStart Team!%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Business:* ${encodeURIComponent(business)}%0A*Interested In:* ${encodeURIComponent(pkg)}${notes ? '%0A*Notes:* ' + encodeURIComponent(notes) : ''}`;
+      const waBtn = document.getElementById('directWaSendBtn');
+      waBtn.href = `https://wa.me/923001234567?text=${waMsg}`;
+
+      // Show confirmation banner
+      const feedback = document.getElementById('formFeedback');
+      feedback.classList.remove('hidden');
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Reset form fields
+      this.reset();
+    });
+
+    // Initialize Inbox on Page Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderLeads();
+    });
+  </script>
+</body>
+</html>
